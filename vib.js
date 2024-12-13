@@ -1,8 +1,8 @@
-function vibrateShakes(shakes) {
+function vib(shakes) {
     // Check if vibration is supported on the device
     if (navigator.vibrate) {
         // Array to create a "shake" pattern (vibrate for 50ms, pause for 50ms)
-        const shakePattern = [500, 1000]; // Vibrate for 50ms, pause for 50ms
+        const shakePattern = [100, 400]; // Vibrate for 50ms, pause for 50ms
 
         // Repeat the shake pattern for the specified number of shakes
         const totalPattern = [];

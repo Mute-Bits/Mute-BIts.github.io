@@ -4,6 +4,7 @@ let otherFiles = ["api.js", "say.js", "autoReload.js", "vib.js"];
 // Function to display error messages on the page
 function displayErrorMessage(message, color) {
     const errorDiv = document.createElement("div");
+    
     errorDiv.style.position = "fixed";
     errorDiv.style.top = "0";
     errorDiv.style.left = "0";
