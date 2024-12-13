@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Gyroscope Example with Auto-Reload</title>
+</head>
+<body>
+  <h1>Device Orientation</h1>
+  <p>Rotate your device to see the values change!</p>
+  <p>Alpha (Z-axis): <span id="alpha">0</span></p>
+  <p>Beta (X-axis): <span id="beta">0</span></p>
+  <p>Gamma (Y-axis): <span id="gamma">0</span></p>
+
+ 
+  <script src="autoReload.js"></script>
+  <script src="vib.js"></script>
+  
+  <script src="say.js"></script>
+  <script src="api.js"></script>
+  <script>
+    function makeSay(i){
+        say("i say "+i);
+        vibrateShakes(i);
+        setTimeout(() => {
+            i++;
+            makeSay(i);
+        }, 5000);
+    }
+    makeSay(0);
+  </script>
+</body>
+</html>
