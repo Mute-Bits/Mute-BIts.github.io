@@ -5,7 +5,6 @@ const timerBreak = 20;
 const box = document.getElementById("box");
 const boxc = document.getElementById("boxc");
 const c = document.getElementById("c");
-
 const t = document.getElementById("timer");
 
 // Gyroscope functionality
@@ -28,8 +27,9 @@ if (window.DeviceOrientationEvent) {
                 box.style.backgroundColor = "rgb(13, 117, 202)";
             }
     
-            if(lastCounter > 4){
+            if(lastCounter == 4){
                 box.style.backgroundColor = "rgb(202, 13, 19)";
+                beeb(1);
             }
             last = rotation;
         }
@@ -71,4 +71,16 @@ function displayStat(event){
     document.getElementById("alpha").textContent = event.alpha.toFixed(2);
     document.getElementById("beta").textContent = event.beta.toFixed(2);
     document.getElementById("gamma").textContent = event.gamma.toFixed(2);
+}
+
+
+function beeb(num) {
+    var ourAudio = document.createElement('audio'); // Create a audio element using the DOM
+    ourAudio.style.display = "none"; // Hide the audio element
+    ourAudio.src = "beeb ("+num+").wav"; // Set resource to our URL
+    ourAudio.autoplay = true; // Automatically play sound
+    ourAudio.onended = function() {
+      this.remove(); // Remove when played.
+    };
+    document.body.appendChild(ourAudio);
 }
