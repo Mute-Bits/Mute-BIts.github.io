@@ -2,6 +2,19 @@
 <html>
 <head>
   <title>Gyroscope Example with Auto-Reload</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body, html{
+      overflow-y: hidden;
+      overflow-y: hidden;
+    }
+    #box{
+      position: absolute;
+      background-color: rgb(13, 117, 202);
+      width: 10vw;
+      height: 10vw;
+    }
+  </style>
 </head>
 <body>
   <h1>Device Orientation: version 1.1</h1>
@@ -9,21 +22,17 @@
   <p>Alpha (Z-axis): <span id="alpha">0</span></p>
   <p>Beta (X-axis): <span id="beta">0</span></p>
   <p>Gamma (Y-axis): <span id="gamma">0</span></p>
+  <div id="box"></div>
+  <br><br><br><br>
+  <p>box: <span id="boxc">0</span></p>
+  <p>lastCounter: <span id="c">0</span></p>
+  <p>timer: <span id="timer">0</span></p>
  
   <script src="autoReload.js"></script>
   <script src="vib.js"></script>
   <script src="say.js"></script>
   <script src="api.js"></script>
-  <script>
-    function makeSay(i){
-        say("i say "+i);
-        vib(i);
-        setTimeout(() => {
-            i++;
-            makeSay(i);
-        }, 10000);
-    }
-    makeSay(1);
-  </script>
+  <script src="main.js"></script>
+  <script src="testSayAndVib.js"></script>
 </body>
 </html>

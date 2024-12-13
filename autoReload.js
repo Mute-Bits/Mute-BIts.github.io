@@ -1,10 +1,10 @@
 const reloadPeriod = 2000;
-let otherFiles = ["api.js", "say.js", "autoReload.js", "vib.js"];
+let otherFiles = ["api.js", "say.js", "autoReload.js", "vib.js", "testSayAndVib.js"];
 
 // Function to display error messages on the page
 function displayErrorMessage(message, color) {
     const errorDiv = document.createElement("div");
-    
+
     errorDiv.style.position = "fixed";
     errorDiv.style.top = "0";
     errorDiv.style.left = "0";
@@ -19,7 +19,7 @@ function displayErrorMessage(message, color) {
     // Hide the error message after 5 seconds
     setTimeout(() => {
         errorDiv.style.display = "none";
-    }, 2000);
+    }, 3000);
 }
 
 // Auto-reload functionality
